@@ -31,7 +31,7 @@ public class ItemStackMixin_AzItemStackIdentityRegistry {
         method = "<init>(Lnet/minecraft/world/level/ItemLike;ILnet/minecraft/core/component/PatchedDataComponentMap;)V",
         at = @At("TAIL")
     )
-    public void az_addIdentityComponent(ItemLike item, int count, PatchedDataComponentMap components, CallbackInfo ci) {
+    public void azurelib$addIdentityComponent(ItemLike item, int count, PatchedDataComponentMap components, CallbackInfo ci) {
         var self = AzureLibUtil.<ItemStack>self(this);
         if (AzIdentityRegistry.hasIdentity(self.getItem()) && !components.has(AzureLib.AZ_ID.get())) {
             components.set(AzureLib.AZ_ID.get(), UUID.randomUUID());

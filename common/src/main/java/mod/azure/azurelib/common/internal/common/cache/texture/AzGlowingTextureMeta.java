@@ -18,15 +18,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import mod.azure.azurelib.common.api.client.renderer.layer.AutoGlowingGeoLayer;
-
 /**
- * Metadata class that stores the data for AzureLib's {@link AutoGlowingGeoLayer emissive texture feature} for a given
+ * Metadata class that stores the data for AzureLib's {@link mod.azure.azurelib.rewrite.render.layer.AzAutoGlowingLayer emissive texture feature} for a given
  * texture
  */
-public class GeoGlowingTextureMeta {
+public class AzGlowingTextureMeta {
 
-    public static final MetadataSectionSerializer<GeoGlowingTextureMeta> DESERIALIZER =
+    public static final MetadataSectionSerializer<AzGlowingTextureMeta> DESERIALIZER =
         new MetadataSectionSerializer<>() {
 
             @Override
@@ -35,7 +33,7 @@ public class GeoGlowingTextureMeta {
             }
 
             @Override
-            public GeoGlowingTextureMeta fromJson(JsonObject json) {
+            public AzGlowingTextureMeta fromJson(JsonObject json) {
                 List<Pixel> pixels = fromSections(GsonHelper.getAsJsonArray(json, "sections", null));
 
                 if (pixels.isEmpty())
@@ -43,7 +41,7 @@ public class GeoGlowingTextureMeta {
                         "Empty glowlayer sections file. Must have at least one glow section!"
                     );
 
-                return new GeoGlowingTextureMeta(pixels);
+                return new AzGlowingTextureMeta(pixels);
             }
 
             /**
@@ -85,14 +83,14 @@ public class GeoGlowingTextureMeta {
 
     private final List<Pixel> pixels;
 
-    public GeoGlowingTextureMeta(List<Pixel> pixels) {
+    public AzGlowingTextureMeta(List<Pixel> pixels) {
         this.pixels = pixels;
     }
 
     /**
      * Generate the GlowLayer pixels list from an existing image resource, instead of using the .png.mcmeta file
      */
-    public static GeoGlowingTextureMeta fromExistingImage(NativeImage glowLayer) {
+    public static AzGlowingTextureMeta fromExistingImage(NativeImage glowLayer) {
         List<Pixel> pixels = new ObjectArrayList<>();
 
         for (int x = 0; x < glowLayer.getWidth(); x++) {
@@ -107,7 +105,7 @@ public class GeoGlowingTextureMeta {
         if (pixels.isEmpty())
             throw new IllegalStateException("Invalid glow layer texture provided, must have at least one pixel!");
 
-        return new GeoGlowingTextureMeta(pixels);
+        return new AzGlowingTextureMeta(pixels);
     }
 
     /**

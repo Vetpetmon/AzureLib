@@ -16,11 +16,8 @@ import java.nio.charset.Charset;
 
 import mod.azure.azurelib.common.internal.common.AzureLib;
 import mod.azure.azurelib.common.internal.common.AzureLibException;
-import mod.azure.azurelib.common.internal.common.cache.object.BakedGeoModel;
 import mod.azure.azurelib.common.internal.common.loading.json.raw.Model;
-import mod.azure.azurelib.common.internal.common.loading.object.BakedAnimations;
 import mod.azure.azurelib.common.internal.common.util.JsonUtil;
-import mod.azure.azurelib.core.animation.Animation;
 import mod.azure.azurelib.rewrite.animation.primitive.AzBakedAnimation;
 import mod.azure.azurelib.rewrite.animation.primitive.AzBakedAnimations;
 
@@ -34,17 +31,6 @@ public final class FileLoader {
     }
 
     /**
-     * Load up and deserialize an animation json file to its respective {@link Animation} components
-     *
-     * @param location The resource path of the animations file
-     * @param manager  The Minecraft {@code ResourceManager} responsible for maintaining in-memory resource access
-     * @deprecated
-     */
-    public static BakedAnimations loadAnimationsFile(ResourceLocation location, ResourceManager manager) {
-        return JsonUtil.GEO_GSON.fromJson(loadFile(location, manager), BakedAnimations.class);
-    }
-
-    /**
      * Load up and deserialize an animation json file to its respective {@link AzBakedAnimation} components
      *
      * @param location The resource path of the animations file
@@ -55,8 +41,6 @@ public final class FileLoader {
     }
 
     /**
-     * Load up and deserialize a geo model json file to its respective {@link BakedGeoModel} format
-     *
      * @param location The resource path of the model file
      * @param manager  The Minecraft {@code ResourceManager} responsible for maintaining in-memory resource access
      */

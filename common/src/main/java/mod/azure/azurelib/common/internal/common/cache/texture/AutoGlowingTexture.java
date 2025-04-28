@@ -65,14 +65,14 @@ public class AutoGlowingTexture extends AzAbstractTexture {
 
         try {
             Optional<Resource> glowLayerResource = resourceManager.getResource(this.glowLayer);
-            GeoGlowingTextureMeta glowLayerMeta = null;
+            AzGlowingTextureMeta glowLayerMeta = null;
 
             if (glowLayerResource.isPresent()) {
                 glowImage = NativeImage.read(glowLayerResource.get().open());
-                glowLayerMeta = GeoGlowingTextureMeta.fromExistingImage(glowImage);
+                glowLayerMeta = AzGlowingTextureMeta.fromExistingImage(glowImage);
             } else {
-                Optional<GeoGlowingTextureMeta> meta = textureBaseResource.metadata()
-                    .getSection(GeoGlowingTextureMeta.DESERIALIZER);
+                Optional<AzGlowingTextureMeta> meta = textureBaseResource.metadata()
+                    .getSection(AzGlowingTextureMeta.DESERIALIZER);
 
                 if (meta.isPresent()) {
                     glowLayerMeta = meta.get();

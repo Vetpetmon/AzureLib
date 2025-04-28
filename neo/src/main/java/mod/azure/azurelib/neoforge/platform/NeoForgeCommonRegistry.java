@@ -8,19 +8,15 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -34,8 +30,6 @@ public class NeoForgeCommonRegistry implements CommonRegistry {
     public static DeferredRegister<Block> blockDeferredRegister;
 
     public static DeferredRegister<EntityType<?>> entityTypeDeferredRegister;
-
-    public static DeferredRegister<ArmorMaterial> armorMaterialDeferredRegister;
 
     public static DeferredRegister<Item> itemDeferredRegister;
 
@@ -82,18 +76,6 @@ public class NeoForgeCommonRegistry implements CommonRegistry {
         // if (modID.isEmpty()) modID = "minecraft";
         // entityTypeDeferredRegister = DeferredRegister.create(Registries.ENTITY_TYPE, modID);
         // return entityTypeDeferredRegister.register(entityName, entity);
-        return null;
-    }
-
-    @Override
-    public <T extends ArmorMaterial> Holder<T> registerArmorMaterial(
-        String modID,
-        String matName,
-        Supplier<T> armorMaterial
-    ) {
-        // if (modID.isEmpty()) modID = "minecraft";
-        // armorMaterialDeferredRegister = DeferredRegister.create(Registries.ARMOR_MATERIAL, modID);
-        // return (Holder<T>) armorMaterialDeferredRegister.register(matName, armorMaterial);
         return null;
     }
 
@@ -179,16 +161,6 @@ public class NeoForgeCommonRegistry implements CommonRegistry {
         // fluidDeferredRegister = DeferredRegister.create(Registries.FLUID, modID);
         // return fluidDeferredRegister.register(fluidName, fluid);
         return null;
-    }
-
-    @Override
-    public <E extends Mob> Supplier<SpawnEggItem> makeSpawnEggFor(
-        Supplier<EntityType<E>> entityType,
-        int primaryEggColour,
-        int secondaryEggColour,
-        Item.Properties itemProperties
-    ) {
-        return () -> new DeferredSpawnEggItem(entityType, primaryEggColour, secondaryEggColour, itemProperties);
     }
 
     @Override

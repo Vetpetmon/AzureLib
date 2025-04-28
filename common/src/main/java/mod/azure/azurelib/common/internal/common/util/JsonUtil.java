@@ -17,10 +17,6 @@ import java.util.Map;
 import java.util.function.Function;
 
 import mod.azure.azurelib.common.internal.common.loading.json.raw.*;
-import mod.azure.azurelib.common.internal.common.loading.json.typeadapter.BakedAnimationsAdapter;
-import mod.azure.azurelib.common.internal.common.loading.json.typeadapter.KeyFramesAdapter;
-import mod.azure.azurelib.common.internal.common.loading.object.BakedAnimations;
-import mod.azure.azurelib.core.animation.Animation;
 import mod.azure.azurelib.rewrite.animation.parse.AzBakedAnimationsAdapter;
 import mod.azure.azurelib.rewrite.animation.parse.AzKeyframesAdapter;
 import mod.azure.azurelib.rewrite.animation.primitive.AzBakedAnimations;
@@ -45,10 +41,6 @@ public record JsonUtil() {
         .registerTypeAdapter(TextureMesh.class, TextureMesh.deserializer())
         .registerTypeAdapter(UVFaces.class, UVFaces.deserializer())
         .registerTypeAdapter(UVUnion.class, UVUnion.deserializer())
-        // TODO: Remove
-        .registerTypeAdapter(Animation.Keyframes.class, new KeyFramesAdapter())
-        // TODO: Remove
-        .registerTypeAdapter(BakedAnimations.class, new BakedAnimationsAdapter())
         .registerTypeAdapter(AzKeyframes.class, new AzKeyframesAdapter())
         .registerTypeAdapter(AzBakedAnimations.class, new AzBakedAnimationsAdapter())
         .create();

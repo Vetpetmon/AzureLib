@@ -27,5 +27,3 @@ side = "BOTH"
 config = "${mod_id}.mixins.json"
 [[mixins]]
 config = "${mod_id}.neo.mixins.json"
-[[mixins]]
-config = "${mod_id}.neo2.mixins.json"

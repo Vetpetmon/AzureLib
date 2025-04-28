@@ -11,12 +11,9 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -82,15 +79,6 @@ public class FabricCommonRegistry implements CommonRegistry {
     }
 
     @Override
-    public <T extends ArmorMaterial> Holder<T> registerArmorMaterial(
-        String modID,
-        String matName,
-        Supplier<T> armorMaterial
-    ) {
-        return registerHolder(BuiltInRegistries.ARMOR_MATERIAL, modID, matName, armorMaterial);
-    }
-
-    @Override
     public <T extends Item> Supplier<T> registerItem(String modID, String itemName, Supplier<T> item) {
         return registerSupplier(BuiltInRegistries.ITEM, modID, itemName, item);
     }
@@ -148,16 +136,6 @@ public class FabricCommonRegistry implements CommonRegistry {
     @Override
     public <T extends Fluid> Supplier<T> registerFluid(String modID, String fluidName, Supplier<T> fluid) {
         return registerSupplier(BuiltInRegistries.FLUID, modID, fluidName, fluid);
-    }
-
-    @Override
-    public <E extends Mob> Supplier<SpawnEggItem> makeSpawnEggFor(
-        Supplier<EntityType<E>> entityType,
-        int primaryEggColour,
-        int secondaryEggColour,
-        Item.Properties itemProperties
-    ) {
-        return () -> new SpawnEggItem(entityType.get(), primaryEggColour, secondaryEggColour, itemProperties);
     }
 
     @Override

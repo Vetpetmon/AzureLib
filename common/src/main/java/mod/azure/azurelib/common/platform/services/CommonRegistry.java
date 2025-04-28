@@ -7,12 +7,9 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -37,8 +34,6 @@ public interface CommonRegistry {
         String entityName,
         Supplier<EntityType<T>> entity
     );
-
-    <T extends ArmorMaterial> Holder<T> registerArmorMaterial(String modID, String matName, Supplier<T> armorMaterial);
 
     <T extends Item> Supplier<T> registerItem(String modID, String itemName, Supplier<T> item);
 
@@ -67,13 +62,6 @@ public interface CommonRegistry {
     default <T extends Fluid> Supplier<T> registerFluid(String modID, String fluidName, Supplier<T> item) {
         return null;
     }
-
-    <E extends Mob> Supplier<SpawnEggItem> makeSpawnEggFor(
-        Supplier<EntityType<E>> entityType,
-        int primaryEggColour,
-        int secondaryEggColour,
-        Item.Properties itemProperties
-    );
 
     CreativeModeTab.Builder newCreativeTabBuilder();
 }

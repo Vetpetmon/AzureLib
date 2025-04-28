@@ -7,11 +7,6 @@ package mod.azure.azurelib.core.keyframe.event.data;
 
 import java.util.Objects;
 
-import mod.azure.azurelib.core.keyframe.Keyframe;
-
-/**
- * Sound {@link Keyframe} instruction holder
- */
 public class SoundKeyframeData extends KeyFrameData {
 
     private final String sound;
@@ -22,9 +17,6 @@ public class SoundKeyframeData extends KeyFrameData {
         this.sound = sound;
     }
 
-    /**
-     * Gets the sound id given by the {@link Keyframe} instruction from the {@code animation.json}
-     */
     public String getSound() {
         return this.sound;
     }

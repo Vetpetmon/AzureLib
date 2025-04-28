@@ -22,7 +22,7 @@ import mod.azure.azurelib.common.platform.Services;
 public abstract class PlayerListMixin {
 
     @Inject(method = "placeNewPlayer", at = @At("TAIL"))
-    private void configuration_sendServerConfigs(
+    private void azurelib$sendServerConfigs(
         Connection connection,
         ServerPlayer player,
         CommonListenerCookie commonListenerCookie,

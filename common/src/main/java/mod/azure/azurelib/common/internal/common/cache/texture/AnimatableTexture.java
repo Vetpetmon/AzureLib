@@ -5,7 +5,6 @@
  */
 package mod.azure.azurelib.common.internal.common.cache.texture;
 
-import com.mojang.blaze3d.pipeline.RenderCall;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.platform.TextureUtil;
 import com.mojang.blaze3d.systems.RenderSystem;

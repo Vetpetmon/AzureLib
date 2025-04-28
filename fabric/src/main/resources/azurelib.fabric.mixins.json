@@ -12,7 +12,6 @@
   "client": [
     "BlockEntityMixin_AzBlockEntityAnimatorCache",
     "EntityMixin_AzEntityAnimatorCache",
-    "ItemRendererAccessor",
     "ItemStackMixin_AzItemAnimatorCache",
     "MinecraftMixin",
     "MixinHumanoidArmorLayer",

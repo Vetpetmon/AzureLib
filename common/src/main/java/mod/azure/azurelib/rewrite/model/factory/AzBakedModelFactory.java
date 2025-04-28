@@ -1,11 +1,11 @@
 package mod.azure.azurelib.rewrite.model.factory;
 
+import mod.azure.azurelib.common.internal.common.cache.object.GeoCube;
+import mod.azure.azurelib.common.internal.common.cache.object.GeoQuad;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
-import mod.azure.azurelib.common.internal.common.cache.object.GeoCube;
-import mod.azure.azurelib.common.internal.common.cache.object.GeoQuad;
 import mod.azure.azurelib.common.internal.common.loading.json.raw.Cube;
 import mod.azure.azurelib.common.internal.common.loading.json.raw.FaceUV;
 import mod.azure.azurelib.common.internal.common.loading.json.raw.ModelProperties;

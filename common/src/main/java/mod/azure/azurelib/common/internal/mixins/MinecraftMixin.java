@@ -30,7 +30,7 @@ public abstract class MinecraftMixin extends ReentrantBlockableEventLoop<Runnabl
             value = "INVOKE", target = "Lnet/minecraft/client/renderer/GameRenderer;resetData()V"
         )
     )
-    private void configuration_reloadClientConfigs(Screen screen, CallbackInfo ci) {
+    private void azurelib$reloadClientConfigs(Screen screen, CallbackInfo ci) {
         ConfigHolderRegistry.getSynchronizedConfigs()
             .stream()
             .map(ConfigHolderRegistry::getConfig)

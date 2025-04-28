@@ -5,7 +5,6 @@
 package mod.azure.azurelib.common.internal.common;
 
 import mod.azure.azurelib.common.api.common.config.Config;
-import mod.azure.azurelib.common.internal.common.config.AzureLibConfig;
 import mod.azure.azurelib.common.internal.common.config.ConfigHolder;
 import mod.azure.azurelib.common.internal.common.config.ConfigHolderRegistry;
 import mod.azure.azurelib.common.internal.common.config.format.ConfigFormats;
@@ -15,8 +14,6 @@ import mod.azure.azurelib.common.internal.common.registry.AzureBlocksEntityRegis
 import mod.azure.azurelib.common.internal.common.registry.AzureBlocksRegistry;
 
 public final class AzureLibMod {
-
-    public static AzureLibConfig config;
 
     private AzureLibMod() {
         throw new UnsupportedOperationException();

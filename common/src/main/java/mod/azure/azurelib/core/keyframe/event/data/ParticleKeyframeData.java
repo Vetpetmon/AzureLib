@@ -7,11 +7,6 @@ package mod.azure.azurelib.core.keyframe.event.data;
 
 import java.util.Objects;
 
-import mod.azure.azurelib.core.keyframe.Keyframe;
-
-/**
- * Particle {@link Keyframe} instruction holder
- */
 public class ParticleKeyframeData extends KeyFrameData {
 
     private final String effect;
@@ -28,23 +23,14 @@ public class ParticleKeyframeData extends KeyFrameData {
         this.effect = effect;
     }
 
-    /**
-     * Gets the effect id given by the {@link Keyframe} instruction from the {@code animation.json}
-     */
     public String getEffect() {
         return this.effect;
     }
 
-    /**
-     * Gets the locator string given by the {@link Keyframe} instruction from the {@code animation.json}
-     */
     public String getLocator() {
         return this.locator;
     }
 
-    /**
-     * Gets the script string given by the {@link Keyframe} instruction from the {@code animation.json}
-     */
     public String script() {
         return this.script;
     }

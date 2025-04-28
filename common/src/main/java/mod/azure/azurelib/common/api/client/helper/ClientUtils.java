@@ -9,8 +9,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import mod.azure.azurelib.common.internal.client.renderer.GeoRenderer;
-
 /**
  * Helper class for segregating client-side code
  */
@@ -33,7 +31,6 @@ public record ClientUtils() {
 
     /**
      * Translates the provided {@link PoseStack} to face towards the given {@link Entity}'s rotation.<br>
-     * Usually used for rotating projectiles towards their trajectory, in an {@link GeoRenderer#preRender} override.<br>
      */
     public static void faceRotation(PoseStack poseStack, Entity animatable, float partialTick) {
         poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTick, animatable.yRotO, animatable.getYRot()) - 90));

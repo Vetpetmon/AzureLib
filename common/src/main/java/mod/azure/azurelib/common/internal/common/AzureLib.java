@@ -1,9 +1,7 @@
 package mod.azure.azurelib.common.internal.common;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,19 +28,6 @@ public final class AzureLib {
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static final Marker MAIN_MARKER = MarkerManager.getMarker("main");
-
-    /**
-     * @deprecated
-     */
-    @Deprecated(forRemoval = true)
-    public static final Supplier<DataComponentType<Long>> STACK_ANIMATABLE_ID_COMPONENT = Services.PLATFORM
-        .registerDataComponent(
-            "stack_animatable_id",
-            builder -> builder.persistent(Codec.LONG)
-                .networkSynchronized(
-                    ByteBufCodecs.VAR_LONG
-                )
-        );
 
     public static final Supplier<DataComponentType<UUID>> AZ_ID = Services.PLATFORM
         .registerDataComponent(
